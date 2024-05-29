@@ -143,7 +143,7 @@ function FoodItems({ setLoading, loading, sorting, setSort }) {
           <h5 className='m-4 text-xl font-bold'>
             Select The Best {selectedCountry} Dishes Available{' '}
           </h5>
-          <div class=' mt-2 mb-2 ms-4 me-4 grid lg:grid-cols-4 lg:gap-4 md:grid-cols-3 md:gap-4  sm:grid-cols-2 sm:gap-4 '>
+          <div class=' mt-2 mb-2 ms-4 me-4 grid lg:grid-cols-4 lg:gap-4 md:grid-cols-3 md:gap-4  sm:grid-cols-2 sm:gap-4 justify-center '>
             {pageData.map((item) => (
               <div class='max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 card3 cursor-pointer'>
                 <img

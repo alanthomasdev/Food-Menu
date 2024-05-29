@@ -272,7 +272,7 @@ function App() {
         <div></div>
       </section>
 
-      <footer class='shadow dark:bg-gray-800 mt-4'>
+      <footer class='shadow dark:bg-gray-800 mt-4' style={{marginTop:'50px'}}>
         <footer class='bg-white rounded-lg m-4 dark:bg-gray-200 shadow-2xl'>
           <div class='w-100 flex justify-center'>
             <img
