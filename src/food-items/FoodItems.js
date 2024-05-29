@@ -7,7 +7,6 @@ function FoodItems({ setLoading, loading, sorting,setSort }) {
   const [mealsCollection, setMeals] = useState([]);
   const [pageData, setDataPagination] = useState([]);
   const selectedCountry = useSelector((state) => state.country.selectedCountry);
-  const dispatch = useDispatch();
   const [currentPage, setpage] = useState(1);
   // const [meal, setMeal] = useState([]);
   const myRef = useRef(null);
@@ -139,26 +138,16 @@ function FoodItems({ setLoading, loading, sorting,setSort }) {
         //   </div>
         // </div>
         <div className="flex items-center justify-center h-[50vh]">
-          <div class="hourglassBackground">
-      <div class="hourglassContainer">
-        <div class="hourglassCurves"></div>
-        <div class="hourglassCapTop"></div>
-        <div class="hourglassGlassTop"></div>
-        <div class="hourglassSand"></div>
-        <div class="hourglassSandStream"></div>
-        <div class="hourglassCapBottom"></div>
-        <div class="hourglassGlass"></div>
-      </div>
-    </div>
+                  <div class="loader"></div>
         </div>
       ) : (
         <div className="mt-5">
-          <h5 className="m-4 text-xl font-black">
+          <h5 className="m-4 text-xl font-bold">
             Select The Best {selectedCountry} Dishes Available{" "}
           </h5>
           <div class=" mt-2 mb-2 ms-4 me-4 grid lg:grid-cols-4 lg:gap-4 md:grid-cols-3 md:gap-4  sm:grid-cols-2 sm:gap-4 ">
             {pageData.map((item) => (
-              <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+              <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 card3 cursor-pointer">
                 <img
                   onClick={() => modalOpener(item.strMeal)}
                   class="rounded-t-lg"
@@ -339,3 +328,5 @@ function FoodItems({ setLoading, loading, sorting,setSort }) {
 }
 
 export default FoodItems;
+
+

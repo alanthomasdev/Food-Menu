@@ -1,32 +1,32 @@
-import logo from "./logo.svg";
-import "./App.css";
-import FoodItems from "./food-items/FoodItems";
-import { useSelector, useDispatch } from "react-redux";
-import { selectCountry } from "./Redux/action";
-import { useEffect, useState } from "react";
-import Pagination from "./Pagination/Pagination";
+import logo from './logo.svg';
+import './App.css';
+import FoodItems from './food-items/FoodItems';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectCountry } from './Redux/action';
+import { useEffect, useState } from 'react';
+import Pagination from './Pagination/Pagination';
 
 function App() {
   const items = [
-    "Fast Delivery",
-    "New On Swiggy",
-    "Rating 4.0+",
-    "Non Veg",
-    "Veg",
-    "Offers",
-    "Rs.300 - Rs.600",
-    "Less Than Rs.300",
+    'Fast Delivery',
+    'New On Swiggy',
+    'Rating 4.0+',
+    'Non Veg',
+    'Veg',
+    'Offers',
+    'Rs.300 - Rs.600',
+    'Less Than Rs.300'
   ];
 
   const [filter, setFilter] = useState([]);
   const [loading, setLoading] = useState(false);
   const selectedCountry = useSelector((state) => state.country.selectedCountry);
-  const [sort, setSort] = useState("asc");
+  const [sort, setSort] = useState('asc');
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
     setLoading(true);
-    getData().catch((error) => console.error("Error fetching data:", error));
+    getData().catch((error) => console.error('Error fetching data:', error));
 
     getCategories();
   }, []);
@@ -75,8 +75,7 @@ function App() {
           <form class="w-full">
             <label
               for="default-search"
-              class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
-            >
+              class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">
               Search
             </label>
             <div class="relative">
@@ -86,8 +85,7 @@ function App() {
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
-                  viewBox="0 0 20 20"
-                >
+                  viewBox="0 0 20 20">
                   <path
                     stroke="currentColor"
                     stroke-linecap="round"
@@ -110,14 +108,13 @@ function App() {
         </div>
       </header>
 
-      <section style={{ height: "max-content", minHeight: "100vh" }}>
+      <section style={{ height: 'max-content', minHeight: '100vh' }}>
         <div class="filter-section  flex mt-4 ms-6 me-4">
           <button
             type="button"
-            style={{ position: "sticky" }}
+            style={{ position: 'sticky' }}
             onClick={() => setFilterOpen(!filterOpen)}
-            class="flex py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
-          >
+            class="flex py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
             filters
             <div class="ms-2">
               <svg
@@ -127,8 +124,7 @@ function App() {
                 width="24"
                 height="24"
                 fill="currentColor"
-                viewBox="0 0 24 24"
-              >
+                viewBox="0 0 24 24">
                 <path d="M10.83 5a3.001 3.001 0 0 0-5.66 0H4a1 1 0 1 0 0 2h1.17a3.001 3.001 0 0 0 5.66 0H20a1 1 0 1 0 0-2h-9.17ZM4 11h9.17a3.001 3.001 0 0 1 5.66 0H20a1 1 0 1 1 0 2h-1.17a3.001 3.001 0 0 1-5.66 0H4a1 1 0 1 1 0-2Zm1.17 6H4a1 1 0 1 0 0 2h1.17a3.001 3.001 0 0 0 5.66 0H20a1 1 0 1 0 0-2h-9.17a3.001 3.001 0 0 0-5.66 0Z" />
               </svg>
             </div>
@@ -151,14 +147,13 @@ function App() {
           </button>
           <button
             onClick={() => {
-              sort == "asc" ? setSort("desc") : setSort("asc");
+              sort == 'asc' ? setSort('desc') : setSort('asc');
             }}
             type="button"
-            class="flex py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
-          >
+            class="flex py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
             sortby
             <div class="ms-2">
-              {sort == "asc" ? (
+              {sort == 'asc' ? (
                 <svg
                   class="w-6 h-6 text-gray-800 dark:text-white"
                   aria-hidden="true"
@@ -166,8 +161,7 @@ function App() {
                   width="24"
                   height="24"
                   fill="none"
-                  viewBox="0 0 24 24"
-                >
+                  viewBox="0 0 24 24">
                   <path
                     stroke="currentColor"
                     stroke-linecap="round"
@@ -184,8 +178,7 @@ function App() {
                   width="24"
                   height="24"
                   fill="none"
-                  viewBox="0 0 24 24"
-                >
+                  viewBox="0 0 24 24">
                   <path
                     stroke="currentColor"
                     stroke-linecap="round"
@@ -202,8 +195,7 @@ function App() {
             <div key={index} className="item ">
               <button
                 type="button"
-                class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
-              >
+                class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
                 {item}
               </button>
 
@@ -215,23 +207,18 @@ function App() {
 
         <div
           className={`transition-[height] duration-1000 delay-550 ease-in-out ${
-            filterOpen ? "max-h-120 opacity-100" : "max-h-0 opacity-0"
-          } overflow-hidden`}
-        >
-          <h5 className="m-4 text-xl font-bold">
-            Select From The Best Regions
-          </h5>
+            filterOpen ? 'max-h-120 opacity-100' : 'max-h-0 opacity-0'
+          } overflow-hidden`}>
+          <h5 className="m-4 text-xl font-bold">Select From The Best Regions</h5>
           <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4 w-100 ms-4 me-4 mt-4 mb-4">
             {filter?.map((item, index) => (
               <div
                 class="filter-item cursor-pointer p-2 border rounded-md text-center"
                 style={{
-                  color: selectedCountry === item.strArea ? "white" : "black",
-                  backgroundColor:
-                    selectedCountry === item.strArea ? "#bab2b7" : "",
+                  color: selectedCountry === item.strArea ? 'white' : 'black',
+                  backgroundColor: selectedCountry === item.strArea ? '#cc8c53' : ''
                 }}
-                onClick={() => handleFilter(item.strArea)}
-              >
+                onClick={() => handleFilter(item.strArea)}>
                 {item.strArea}
               </div>
             ))}
@@ -250,13 +237,11 @@ function App() {
           )} */}
 
           <div className="sticky top-0 left-0 bg-white">
-            <h5 className="m-4 text-xl font-bold">
-              Categories That You Can Select From
-            </h5>
+            <h5 className="m-4 text-xl font-bold">Categories That You Can Select From</h5>
           </div>
           <div class="flex w-[max-content] ">
             {categories.map((item, index) => (
-              <div class="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-[14rem] m-2">
+              <div class="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-[14rem] m-2 card2 cursor-pointer">
                 <div class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white shadow-lg bg-clip-border rounded-xl h-[10rem]">
                   <img src={item.strCategoryThumb} alt="profile-picture" />
                 </div>
@@ -271,12 +256,7 @@ function App() {
         </div>
 
         <div>
-          <FoodItems
-            loading={loading}
-            setLoading={setLoading}
-            sorting={sort}
-            setSort={setSort}
-          />
+          <FoodItems loading={loading} setLoading={setLoading} sorting={sort} setSort={setSort} />
         </div>
 
         <div></div>
@@ -292,7 +272,7 @@ function App() {
           </div>
           <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
             <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-              © 2024{" "}
+              © 2024{' '}
               <a href="#" class="hover:underline">
                 Swiggy
               </a>
