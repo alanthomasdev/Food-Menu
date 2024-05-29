@@ -1,5 +1,6 @@
 ## Food Menu Website
 This repository contains a food menu website designed to showcase a variety of foods, with features such as filtering by country, sorting, pagination, and more. The website is built using modern technologies like React, Tailwind CSS, and Redux.
+Have a peek in : https://main--nimble-daifuku-0afb0c.netlify.app/
 
 ## Features
 Filter Button: Allows users to filter foods by different countries.
@@ -22,7 +23,6 @@ Follow the instructions below to get a local copy of the project up and running.
 Clone the repository:
 # Copy code
 git clone [https://github.com/your-username/food-menu-website.git](https://github.com/AlanGitX/Alan-Thomas---Frontend-Developer.)
-cd food-menu-website
 # Install dependencies:
 npm install
 
